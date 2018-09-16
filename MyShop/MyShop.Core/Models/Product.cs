@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public string Id { get; set; }
+        //Campo Id ahora es manejado desde clase BaseEntity
+        //public string Id { get; set; }
 
         [StringLength(20)]
         [DisplayName("Product Name")]
@@ -22,9 +23,12 @@ namespace MyShop.Core.Models
         public string Category { get; set; }
         public string Image { get; set; }
 
+        //Constructor ya no es necesario dado que el Id se maneja desde BaseEntity.
+        /*
         public Product()
         {
             this.Id = Guid.NewGuid().ToString();
         }
+        */
     }
 }

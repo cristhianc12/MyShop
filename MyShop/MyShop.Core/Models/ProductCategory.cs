@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class ProductCategory
+    public class ProductCategory : BaseEntity
     {
-        public string Id { get; set; }
+        //Campo Id ahora es manejado desde clase BaseEntity
+        //public string Id { get; set; }
         public string Category { get; set; }
 
+        //Constructor ya no es necesario dado que el Id se maneja desde BaseEntity.
+        /*
         public ProductCategory()
         {
             this.Id = Guid.NewGuid().ToString();
         }
+        */
     }
 }
