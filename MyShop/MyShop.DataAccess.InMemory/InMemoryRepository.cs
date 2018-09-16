@@ -1,4 +1,5 @@
-﻿using MyShop.Core.Models;
+﻿using MyShop.Core.Contracts;
+using MyShop.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyShop.DataAccess.InMemory
 {
-    public class InMemoryRepository<T> where T : BaseEntity //Se hereda de BaseEntity para que sepa que es Id.
+    public class InMemoryRepository<T> : IRepository<T> where T : BaseEntity //Se hereda de BaseEntity para que sepa què es Id.
     {
         ObjectCache cache = MemoryCache.Default;
         List<T> items;
